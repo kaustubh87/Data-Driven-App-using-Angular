@@ -13,12 +13,13 @@
     </script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="./js/app.js"></script>
+    <script src="../angularregistration/js/controllers/registration.js"></script>
 </head>
 
-<body ng-controller="AppController">
+<body>
     <header> </header>
     <div class="page">
-        <main class="cf">
+        <main class="cf" ng-view>
             {{message}}
         </main>
     </div>
