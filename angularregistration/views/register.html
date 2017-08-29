@@ -8,10 +8,10 @@
 
         <fieldset>
             <input type="firstname" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true">
-            <p class="error validationerror" ng-show="myform.firstname.$touched">First Name cannot be left blank</p>
+            <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">First Name cannot be left blank</p>
 
             <input type="lastname" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
-            <p class="error validationerror" ng-show="myform.lastname.$touched">Last Name cannot be left blank</p>
+            <p class="error validationerror" ng-show="myform.lastname.$invalid && myform.lastname.$touched">Last Name cannot be left blank</p>
 
             <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
             <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">Must be a valid email address</p>
