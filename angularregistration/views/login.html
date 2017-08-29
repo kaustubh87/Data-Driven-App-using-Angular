@@ -7,8 +7,8 @@
         </div>
 
         <fieldset>
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+            <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+            <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
         </fieldset>
 
         <button type="submit" class="btn">Login</button>
