@@ -1,4 +1,5 @@
-myApp.controller('LoginController', ['$scope', function($scope) {
+myApp.controller('LoginController', ['$scope', '$firebase', '$firebaseAuth', function($scope, $firebase, $firebaseAuth) {
+
 
 
     $scope.login = function() {
