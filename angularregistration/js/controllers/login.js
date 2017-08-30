@@ -1,8 +1,8 @@
-myApp.controller('LoginController', ['$scope', '$firebase', '$firebaseAuth', function($scope, $firebase, $firebaseAuth) {
-
-
+myApp.controller('LoginController', ['$scope', 'Authentication', function($scope, Authentication) {
 
     $scope.login = function() {
-        $scope.message = "Welcome " + $scope.user.email;
+
+        Authentication.login($scope.user);
+
     };
 }]);
