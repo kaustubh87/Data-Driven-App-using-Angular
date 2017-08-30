@@ -2,6 +2,8 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
+
+        $locationProvider.html5Mode(true);
         $routeProvider.
         when('/login', {
                 templateUrl: '../../angularregistration/views/login.html',
