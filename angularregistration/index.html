@@ -3,24 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="/" />
     <title>Angular Registration</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../angularregistration/css/style.css">
 
     <script src="../bower_components/angular/angular.js">
     </script>
     <script src="../bower_components/angular-animate/angular-animate.js">
     </script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers/registration.js"></script>
-    <script src="js/controllers/login.js"></script>
+    <script src="../angularregistration/js/app.js"></script>
+    <script src="../angularregistration/js/controllers/registration.js"></script>
+    <script src="../angularregistration/js/controllers/login.js"></script>
 </head>
 
 <body>
     <header>
-        <nav class="cf" ng-include="'views/nav.html'"></nav>
+        <nav class="cf" ng-include="'../angularregistration/views/nav.html'"></nav>
+
     </header>
     <div class="page">
         <main class="cf" ng-view>
