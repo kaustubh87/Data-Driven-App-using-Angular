@@ -8,12 +8,22 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../angularregistration/css/style.css">
-
-    <script src="../bower_components/angular/angular.js">
-    </script>
-    <script src="../bower_components/angular-animate/angular-animate.js">
-    </script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAWcuvMGhz8qQ6sP-XP09THdKAEQS9i-8c",
+            authDomain: "angularregistration-a5627.firebaseapp.com",
+            databaseURL: "https://angularregistration-a5627.firebaseio.com",
+            projectId: "angularregistration-a5627",
+            storageBucket: "",
+            messagingSenderId: "13230816843"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="../angularregistration/js/app.js"></script>
     <script src="../angularregistration/js/controllers/registration.js"></script>
     <script src="../angularregistration/js/controllers/login.js"></script>
