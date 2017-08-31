@@ -39,6 +39,9 @@ myApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$location', '$f
             }).catch(function(error) {
                 $rootScope.message = error.message;
             });
+        },
+        logout: function() {
+            return auth.$signOut();
         }
     };
 
