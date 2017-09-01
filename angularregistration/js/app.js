@@ -12,18 +12,18 @@ myApp.run(['$rootScope', '$location', function($rootScope, $location) {
 myApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
 
-        $locationProvider.html5Mode(true);
+
         $routeProvider.
         when('/login', {
-                templateUrl: '../../angularregistration/views/login.html',
+                templateUrl: 'views/login.html',
                 controller: 'LoginController'
             })
             .when('/register', {
-                templateUrl: '../../angularregistration/views/register.html',
+                templateUrl: 'views/register.html',
                 controller: 'RegistrationController'
             })
             .when('/success', {
-                templateUrl: '../../angularregistration/views/success.html',
+                templateUrl: 'views/success.html',
                 controller: 'SuccessController',
                 resolve: {
                     currentAuth: function(Authentication) {
