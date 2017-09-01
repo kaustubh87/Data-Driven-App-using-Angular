@@ -1,5 +1,14 @@
 var myApp = angular.module('myApp', ['ngRoute', 'firebase']);
 
+myApp.run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('$routeChangeError', function(event, next, previous, error) {
+        if (error == 'AUTH_REQUIRED') {
+            $rootScope.message = 'Sorry, you must login to access that page';
+            $location.path('/login');
+        }
+    });
+}]);
+
 myApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
 
@@ -15,7 +24,12 @@ myApp.config(['$routeProvider', '$locationProvider',
             })
             .when('/success', {
                 templateUrl: '../../angularregistration/views/success.html',
-                controller: 'SuccessController'
+                controller: 'SuccessController',
+                resolve: {
+                    currentAuth: function(Authentication) {
+                        return Authentication.requireAuth();
+                    }
+                }
             })
             .otherwise({
                 redirectTo: '/login'
