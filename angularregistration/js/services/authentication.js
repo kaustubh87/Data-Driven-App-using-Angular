@@ -39,10 +39,13 @@ myApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$location', '$f
             }).catch(function(error) {
                 $rootScope.message = error.message;
             });
-        },
+        }, //Register
         logout: function() {
             return auth.$signOut();
-        }
+        }, //Logout
+        requireAuth: function() {
+                return auth.$requireSignIn();
+            } //Require Authentication
     };
 
 }]);
