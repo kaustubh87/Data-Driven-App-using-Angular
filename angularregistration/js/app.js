@@ -32,7 +32,7 @@ myApp.config(['$routeProvider', '$locationProvider',
                 }
             })
         .when('/meetings', {
-        templateUrl:
+        templateUrl: 'views/meetings.html',
         }
             .otherwise({
                 redirectTo: '/login'
