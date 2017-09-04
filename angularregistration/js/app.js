@@ -40,7 +40,8 @@ myApp.config(['$routeProvider', '$locationProvider',
             controller : 'MeetsController'
         }
                     .when('tasks' , {
-            templteUrl : 'views/tasks.html'
+            templteUrl : 'views/tasks.html',
+            controller : 'TasksController'
         }
             .otherwise({
                 redirectTo: '/login'
