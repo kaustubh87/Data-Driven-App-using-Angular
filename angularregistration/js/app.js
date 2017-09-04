@@ -39,6 +39,9 @@ myApp.config(['$routeProvider', '$locationProvider',
             templateUrl : 'views/meeting.html',
             controller : 'MeetsController'
         }
+                    .when('tasks' , {
+            templteUrl : 'views/tasks.html'
+        }
             .otherwise({
                 redirectTo: '/login'
             });
