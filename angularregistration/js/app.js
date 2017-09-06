@@ -31,22 +31,12 @@ myApp.config(['$routeProvider', '$locationProvider',
                     }
                 }
             })
-        .when('/meetings', {
-        templateUrl: 'views/meetings.html',
-            controller: 'MeetingsController'
-        }
-              .when('meets' , {
-            templateUrl : 'views/meeting.html',
-            controller : 'MeetsController'
-        }
-                    .when('tasks' , {
-            templteUrl : 'views/tasks.html',
-            controller : 'TasksController'
-        }
+            .when('/meetings', {
+                templateUrl: 'views/meetings.html',
+                controller: 'MeetingsController'
+            })
             .otherwise({
                 redirectTo: '/login'
             });
-
-
     }
 ]);
