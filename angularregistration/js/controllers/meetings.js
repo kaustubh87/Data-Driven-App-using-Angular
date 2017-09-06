@@ -5,9 +5,17 @@ myApp.controller('MeetingsController', ['$scope', '$firebaseAuth', '$firebaseArr
 
     auth.$onAuthStateChanged(function(authUser) { //if Authentication changes such as login or logout
         if (authUser) {
-            var userRef = ref.child('users').child(authUser.uid);
-            var userObj = $firebaseObject(userRef);
-            $rootScope.currentUser = userObj;
+            var meetingsRef = ref.child('users').child(authUser.uid).child('meetings');
+            var meetingsInfo = $firebaseArray(meetingsRef);
+
+            $scope.addMeeting = function() {
+                meetingsInfo.$add({
+                    name: $scope.meetingname,
+                    date: firebase.database.ServerValue.TIMESTAMP
+                }).then(function() {
+                    $scope.meetingname = '';
+                });
+            }
         }
     });
 
