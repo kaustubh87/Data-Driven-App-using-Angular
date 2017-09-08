@@ -36,7 +36,7 @@ myApp.config(['$routeProvider', '$locationProvider',
                 controller: 'MeetingsController'
             })
             .otherwise({
-                redirectTo: '/login'
+                redirectTo: '/meetings'
             });
     }
 ]);
