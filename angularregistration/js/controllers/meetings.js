@@ -17,6 +17,11 @@ myApp.controller('MeetingsController', ['$scope', '$firebaseAuth', '$firebaseArr
                     $scope.meetingname = '';
                 });
             }
+
+            //Deleting a meeting
+            $scope.deleteMeeting = function(key) {
+                meetingsInfo.$remove(key);
+            }
         }
     });
 
