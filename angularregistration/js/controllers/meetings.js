@@ -8,6 +8,7 @@ myApp.controller('MeetingsController', ['$scope', '$firebaseAuth', '$firebaseArr
             var meetingsRef = ref.child('users').child(authUser.uid).child('meetings');
             var meetingsInfo = $firebaseArray(meetingsRef);
 
+            $scope.meetings = meetingsInfo;
             $scope.addMeeting = function() {
                 meetingsInfo.$add({
                     name: $scope.meetingname,
