@@ -23,12 +23,12 @@ myApp.config(['$routeProvider', '$locationProvider',
                 controller: 'RegistrationController'
             })
             .when('/checkins/:uId/:mId', {
-                templateUrl: 'views/register.html',
-                controller: 'RegistrationController'
+                templateUrl: 'views/checkins.html',
+                controller: 'CheckInsController'
             })
             .when('/meetings', {
-                templateUrl: 'views/checkins.html',
-                controller: 'CheckInsController',
+                templateUrl: 'views/meetings.html',
+                controller: 'MeetingsController',
                 resolve: {
                     currentAuth: function(Authentication) {
                         return Authentication.requireAuth();
