@@ -1,12 +1,8 @@
-myApp.controller('CheckInsController', ['$scope', 'Authentication', function($scope, Authentication) {
+myApp.controller('CheckInsController', ['$scope', '$rootScope', '$firebaseObject', '$firebaseArray',
+    function($scope, $rootScope, $firebaseObject, $firebaseArray) {
 
-    $scope.login = function() {
 
-        Authentication.login($scope.user);
 
-    };
 
-    $scope.logout = function() {
-        Authentication.logout();
-    };
-}]);
+    }
+]);
