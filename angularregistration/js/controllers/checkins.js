@@ -27,6 +27,14 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$r
             });
         }
 
+        $scope.deleteCheckin = function(id) {
+
+            var refDel = ref.child(id);
+            var record = $firebaseObject(refDel);
+            record.$remove(id);
+
+        }
+
 
     }
 ]);
