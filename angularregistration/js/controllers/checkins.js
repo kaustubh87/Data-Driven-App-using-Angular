@@ -14,6 +14,10 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$r
         checkinsList = $firebaseArray(ref);
         $scope.checkins = checkinsList;
 
+        $scope.order = 'firstname';
+        $scope.direction = null;
+        $scope.query = '';
+
         $scope.addCheckin = function() {
 
             $firebaseArray(ref).$add({
