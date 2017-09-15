@@ -31,13 +31,17 @@
     </div>
 
 
-
     <ul class="userlist cf">
         <li ng-repeat="checkin in checkins | filter:query | orderBy:order: direction | filter: {$id: recordId, $: query}">
             <div class="checkin">
                 <div class="buttons">
                     <button class="btn btn-delete tooltip" ng-click="deleteCheckin(checkin.$id)">
             <span>Delete this Checkin</span>
+              </button>
+
+                    <button class="btn btn-love tooltip" ng-click="showLove(checkin)">
+                        <span>Show the love</span>
+
               </button>
                 </div>
 
@@ -46,6 +50,13 @@
                         <div class="date">
                             {{checkin.date | date: "MMM d, yy h:mm a"}}
                         </div>
+                </div>
+
+                <div class="showcheckins" ng-show="checkin.show">
+                    <form class="cf" ng-submit="giveLove(checkin, checkin.giftText)" novalidate>
+                        <input type="text" name="giftText" ng-required="true" placeholder="What are you giving?" ng-model="checkin.giftText" />
+                        <button class="btn" type="submit" ng-disabled="myform.$invalid">+</button>
+                    </form>
                 </div>
             </div>
         </li>
