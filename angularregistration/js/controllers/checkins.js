@@ -17,6 +17,13 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$r
         $scope.order = 'firstname';
         $scope.direction = null;
         $scope.query = '';
+        $scope.recordId = '';
+
+        $scope.pickRandom = function() {
+
+                var whichRecord = Math.round(Math.random() * (checkinsList.length - 1));
+                $scope.recordId = checkinsList.$keyAt(whichRecord);
+            } // pick a random user
 
         $scope.addCheckin = function() {
 
