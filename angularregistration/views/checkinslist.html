@@ -20,7 +20,13 @@
             <label for="ascending">asc</label>&nbsp;
 
             <input type="radio" id="descending" ng-model="direction" name="direction" value="reverse">
-            <label for="descending">desc</label>&nbsp;
+            <label for="descending">desc</label>
+        </div>
+
+        <div class="buttons cf">
+            <button class="btn btn-pick" ng-hide="recordId" ng-click="pickRandom()">Pick Random</button>
+
+            <button class="btn btn-pick" ng-show="recordId" ng-click="recordId=''">Reset</button>
         </div>
     </div>
 
