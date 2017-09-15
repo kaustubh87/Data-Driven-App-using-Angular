@@ -29,6 +29,16 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$r
             myCheckin.show = !myCheckin.show;
         };
 
+        $scope.giveLove = function(myCheckin, myGift) {
+            var refLove = ref.child(myCheckin.$id).child('awards');
+            var checkinsArray = $firebaseArray(refLove);
+
+            checkinsArray.$add({
+                name: myGift,
+                date: firebase.database.ServerValue.TIMESTAMP
+            });
+        };
+
         $scope.addCheckin = function() {
 
             $firebaseArray(ref).$add({
