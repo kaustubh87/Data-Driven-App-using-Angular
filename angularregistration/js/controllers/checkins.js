@@ -25,6 +25,10 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$r
                 $scope.recordId = checkinsList.$keyAt(whichRecord);
             } // pick a random user
 
+        $scope.showLove = function(myCheckin) {
+            myCheckin.show = !myCheckin.show;
+        };
+
         $scope.addCheckin = function() {
 
             $firebaseArray(ref).$add({
